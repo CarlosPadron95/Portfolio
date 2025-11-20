@@ -1,0 +1,42 @@
+@use "../abstracts/variables" as *;
+@use "../base/typography" as *;
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  font-family: $font;
+  color: $white;
+  background-color: $black;
+  position: relative;
+  overflow-x: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    z-index: 1;
+    background-image: url(../img/elipse2.svg);
+    width: 530px;
+    height: 129px;
+    top: 25.3%;
+    right: -355px;
+  }
+}
+/*Tablet*/
+@media (min-width: 768px) {
+  body {
+    &::before {
+      top: 30.2%;
+    }
+  }
+}
+
+/*Desktop*/
+@media (min-width: 1440px) {
+  body {
+    &::before {
+      top: 25%;
+      right: -24%;
+    }
+  }
+}

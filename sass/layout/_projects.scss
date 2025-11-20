@@ -1,0 +1,166 @@
+@use "../abstracts/variables" as *;
+
+.projects_section {
+  .projects_section_header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    align-items: center;
+
+    .project_section_title {
+      font-size: 40px;
+      letter-spacing: -1.14px;
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+      color: $white;
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 2.29px;
+      margin-top: 10px;
+    }
+  }
+  .project {
+    &_img {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 20px;
+      img {
+        width: 100%;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+    }
+    &_overlay {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      .overlay_link {
+        color: $white;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 2.29px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid $green;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+    &_title {
+      font-size: 24px;
+      margin-bottom: 7px;
+    }
+    &_skills {
+      display: flex;
+      gap: 18px;
+      font-size: 18px;
+      color: $grey;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    &_links {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 52px;
+
+      a {
+        text-decoration: none;
+        color: $white;
+        font-size: 16px;
+        letter-spacing: 2.29px;
+        font-weight: 500;
+      }
+    }
+  }
+  & > .project:last-child {
+    .project_links {
+      margin-bottom: 92px;
+    }
+  }
+  a {
+    padding-bottom: 10px;
+    border-bottom: 2px solid $green;
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
+/*Tablet*/
+@media (min-width: 768px) {
+  .projects_section {
+    .projects_section_header {
+      align-items: center;
+      margin-bottom: 60px;
+      .project_section_title {
+        font-size: 72px;
+        letter-spacing: -2.05px;
+      }
+    }
+  }
+  .projects_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px 24px;
+    margin-bottom: 100px;
+  }
+  .project {
+    .project_overlay {
+      display: none;
+    }
+  }
+}
+
+/*Desktop*/
+@media (min-width: 1440px) {
+  .projects_section {
+    .projects_section_header {
+      margin-bottom: 80px;
+      .project_section_title {
+        font-size: 88px;
+        letter-spacing: -2.5px;
+      }
+    }
+    .projects_grid {
+      gap: 69px 30px;
+      margin-bottom: 139px;
+    }
+    .project {
+      &_links {
+        display: none;
+      }
+      &_overlay {
+        display: flex;
+      }
+      &_img {
+        &:hover {
+          img {
+            transform: scale(1.05);
+          }
+          .project_overlay {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

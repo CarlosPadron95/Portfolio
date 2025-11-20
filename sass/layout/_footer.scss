@@ -1,0 +1,220 @@
+@use "../abstracts/variables" as *;
+@use "../base/typography" as *;
+
+.footer {
+  background-color: $black-light;
+  &::after {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    z-index: 1;
+    background-image: url(../img/elipse.svg);
+    width: 530px;
+    height: 129px;
+    bottom: 256px;
+    left: -245px;
+  }
+  &_section {
+    position: relative;
+    overflow-x: hidden;
+    .contact {
+      padding-top: 60px;
+      border-bottom: 1px solid white;
+      position: relative;
+      z-index: 2;
+      &_title {
+        color: $white;
+        font-size: 40px;
+        text-align: center;
+        letter-spacing: -1.14px;
+        margin-bottom: 20px;
+      }
+      &_subtitle {
+        text-align: center;
+        font-size: 16px;
+        color: $grey;
+        line-height: 26px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+  .contact-form {
+    width: 100%;
+    padding-bottom: 87px;
+  }
+  .form-group {
+    margin-bottom: 32px;
+    width: 100%;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    display: block;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid $white;
+    color: $white;
+    font-size: 16px;
+    padding: 16px 0;
+    resize: none;
+    font-family: $font;
+    font-size: 16px;
+    &::placeholder {
+      color: $grey;
+      font-size: 16px;
+      letter-spacing: -0.22px;
+      font-family: $font;
+    }
+    &:focus {
+      border-bottom-color: $green;
+    }
+  }
+  .form-group-submit {
+    text-align: right;
+    margin-top: 20px;
+
+    button {
+      background: none;
+      border: none;
+      color: $white;
+      font-family: $font;
+      font-weight: bold;
+      letter-spacing: 2.29px;
+      font-size: 16px;
+      cursor: pointer;
+      padding-bottom: 10px;
+      border-bottom: 2px solid $green;
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+  section.social_media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .footer_logo {
+      width: 129px;
+      padding-top: 39px;
+      padding-bottom: 20px;
+      height: max-content;
+    }
+    figure {
+      margin: 0;
+    }
+    .footer_nav {
+      padding: 0;
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 25.6px;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 60px;
+        a {
+          img {
+            width: 20px;
+            height: auto;
+            display: block;
+          }
+          &:hover img {
+            filter: brightness(0) saturate(100%) invert(82%) sepia(15%)
+              saturate(1416%) hue-rotate(95deg) brightness(90%) contrast(98%);
+          }
+        }
+      }
+    }
+  }
+}
+
+/*Tablet*/
+@media (min-width: 768px) {
+  .footer {
+    &::after {
+      bottom: 120px;
+      left: -270px;
+    }
+    &_section {
+      padding-left: 130px;
+      padding-right: 130px;
+      .contact {
+        border-bottom: 0;
+        .contact_info {
+          .contact_title {
+            font-size: 72px;
+            letter-spacing: -2.05px;
+          }
+          .contact_subtitle {
+            font-size: 18px;
+          }
+        }
+        .contact-form {
+          padding-bottom: 92px;
+        }
+      }
+    }
+    section.social_media {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      border-top: 1px solid $white;
+      padding-top: 30px;
+      padding-bottom: 40px;
+
+      img.footer_logo {
+        padding: 0;
+        width: 172px;
+      }
+      .footer_nav {
+        ul {
+          margin: 0;
+
+          a {
+            img {
+              width: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*Desktop*/
+@media (min-width: 1440px) {
+  .footer {
+    &::after {
+      bottom: 220px;
+      left: -100px;
+    }
+    &_section {
+      padding: 0;
+      .contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 220px;
+        padding: 0;
+        padding-top: 84px;
+        .contact_info {
+          .contact_title {
+            font-size: 88px;
+            letter-spacing: -2.5px;
+            text-align: start;
+          }
+          .contact_subtitle {
+            text-align: start;
+          }
+        }
+      }
+    }
+    section.social_media {
+      padding: 47px 0px 92px;
+    }
+  }
+}

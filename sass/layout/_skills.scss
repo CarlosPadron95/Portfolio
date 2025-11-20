@@ -1,0 +1,97 @@
+@use "../abstracts/variables" as *;
+
+.skills_section {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 80px;
+}
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &_title {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+  &_experience {
+    color: $grey;
+    font-weight: 400;
+  }
+}
+
+/*Tablet*/
+@media (min-width: 768px) {
+  .skills_section {
+    border-bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 52px 24px;
+    margin-bottom: 100px;
+  }
+  .skill:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .skill:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .skill:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .skill:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .skill:nth-child(5) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .skill:nth-child(6) {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .skill {
+    align-items: start;
+    &_title {
+      font-size: 48px;
+      letter-spacing: -1.5px;
+    }
+    &_experience {
+      font-size: 18px;
+    }
+  }
+}
+
+/*Desktop*/
+@media (min-width: 1440px) {
+  .skills_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 140px;
+    padding-bottom: 0;
+  }
+  .skill:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .skill:nth-child(4) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .skill:nth-child(5) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .skill:nth-child(6) {
+    grid-column: 3;
+    grid-row: 2;
+  }
+}
